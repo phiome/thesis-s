@@ -8,53 +8,60 @@
   :root{
     --bg:#0f1220; --panel:#171a2b; --panel2:#1e2236; --ink:#e8eaf2; --muted:#9aa0b8;
     --line:#2b3050; --accent:#6c8cff; --accent2:#4cc9a0; --warn:#ff6b6b; --amber:#ffb454;
-    --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.35);
+    --radius:16px; --shadow:0 12px 34px rgba(0,0,0,.38);
   }
   *{box-sizing:border-box}
   body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-       background:radial-gradient(1200px 600px at 70% -10%,#1a1f38 0,var(--bg) 55%);color:var(--ink);line-height:1.55}
-  .wrap{max-width:900px;margin:0 auto;padding:32px 24px 60px}
-  h1{font-size:1.6rem;margin:0 0 6px}
+       background:radial-gradient(1100px 560px at 72% -12%,#1b2140 0,var(--bg) 58%);color:var(--ink);line-height:1.55}
+  .wrap{max-width:900px;margin:0 auto;padding:30px 22px 64px}
+  h1{font-size:1.55rem;margin:0 0 6px;letter-spacing:-.01em}
   h2{font-size:1.2rem;margin:0 0 12px}
   h3{margin:0 0 8px}
-  p{color:var(--muted);margin:.3em 0}
+  p{color:var(--muted);margin:.35em 0}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:20px;box-shadow:var(--shadow)}
-  .row{display:flex;gap:16px;flex-wrap:wrap}
-  .row>*{flex:1;min-width:220px}
-  label.field{display:block;font-size:.82rem;color:var(--muted);margin:0 0 6px;font-weight:600;letter-spacing:.2px}
+  .row{display:flex;gap:16px;flex-wrap:wrap}.row>*{flex:1;min-width:210px}
+  label.field{display:block;font-size:.8rem;color:var(--muted);margin:0 0 6px;font-weight:600;letter-spacing:.2px;text-transform:uppercase}
   button{cursor:pointer;border:0;border-radius:11px;padding:12px 20px;font-size:.95rem;font-weight:650;
-         background:var(--accent);color:#fff;transition:.15s;box-shadow:0 4px 14px rgba(108,140,255,.25)}
+         background:var(--accent);color:#fff;transition:.15s;box-shadow:0 4px 14px rgba(108,140,255,.28)}
   button:hover{filter:brightness(1.08);transform:translateY(-1px)}
   button.ghost{background:var(--panel2);color:var(--ink);border:1px solid var(--line);box-shadow:none}
-  button.small{padding:8px 14px;font-size:.82rem}
-  button:disabled{opacity:.4;cursor:not-allowed;transform:none}
+  button.small{padding:8px 13px;font-size:.82rem}
+  button:disabled{opacity:.4;cursor:not-allowed;transform:none;filter:none}
   select,textarea,input{font-family:inherit;background:var(--panel2);color:var(--ink);border:1px solid var(--line);
          border-radius:11px;padding:11px;width:100%;font-size:.95rem}
   textarea{resize:vertical}
   .badge{display:inline-block;padding:4px 11px;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.4px}
   .b-control{background:#3a2b2b;color:#ffb4b4}.b-supportive{background:#2b3a34;color:#9ff0d4}.b-substitutive{background:#2b2f3a;color:#b4c4ff}
   .hidden{display:none!important}
-  .brandbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+  .brandbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:24px}
   .logo{display:flex;align-items:center;gap:12px}
-  .logo .dot{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
-  .logo small{display:block;color:var(--muted);font-size:.72rem}
+  .logo .dot{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+  .logo b{font-size:1rem}.logo small{display:block;color:var(--muted);font-size:.72rem}
   .langtoggle{display:flex;gap:6px}
-  .muted{color:var(--muted)}
   .note{font-size:.82rem;color:var(--muted)}
   .hr{height:1px;background:var(--line);margin:18px 0}
+  /* role picker */
+  .roles{display:flex;gap:18px;flex-wrap:wrap}
+  .role{flex:1;min-width:240px;text-align:left;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:22px;cursor:pointer;transition:.15s;color:var(--ink);box-shadow:none}
+  .role:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .role .ic{font-size:1.7rem}
+  .role h3{margin:10px 0 4px;font-size:1.1rem}
+  .role p{font-size:.85rem;margin:0}
+  /* consent */
+  .consent{display:flex;gap:12px;align-items:flex-start;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:16px 0}
+  .consent input{width:20px;height:20px;margin-top:2px;flex:none}
+  .consent label{font-size:.9rem;color:var(--ink)}
   /* stepper */
   .steps{display:flex;gap:8px;margin-bottom:20px}
-  .steps .s{flex:1;height:6px;border-radius:99px;background:var(--panel2);overflow:hidden}
+  .steps .s{flex:1;height:6px;border-radius:99px;background:var(--panel2)}
   .steps .s.done{background:var(--accent2)}.steps .s.active{background:var(--accent)}
   /* likert */
-  .q{padding:16px 0;border-bottom:1px solid var(--line)}
-  .q:last-child{border-bottom:0}
+  .q{padding:16px 0;border-bottom:1px solid var(--line)}.q:last-child{border-bottom:0}
   .q .qtext{font-weight:600;margin-bottom:10px}
   .likert{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
   .likert .opt{flex:1;min-width:38px;text-align:center}
   .likert input{display:none}
-  .likert label{display:block;padding:9px 0;border:1px solid var(--line);border-radius:10px;cursor:pointer;
-         background:var(--panel2);font-weight:700;font-size:.9rem;transition:.12s}
+  .likert label{display:block;padding:9px 0;border:1px solid var(--line);border-radius:10px;cursor:pointer;background:var(--panel2);font-weight:700;font-size:.9rem;transition:.12s}
   .likert input:checked+label{background:var(--accent);border-color:var(--accent);color:#fff}
   .anchors{display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted);margin-top:5px}
   /* task */
@@ -77,42 +84,30 @@
   #flagBanner{position:absolute;top:64px;left:0;right:0;background:var(--warn);color:#fff;text-align:center;padding:10px;font-weight:700;z-index:60}
   #fsOverlay{position:fixed;inset:0;background:rgba(10,12,22,.97);z-index:80;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:30px}
   .flagpill{background:#3a2b2b;color:#ffb4b4;padding:3px 10px;border-radius:999px;font-size:.75rem;font-weight:700}
-  /* results / records */
+  /* stats / tables */
   .grid3{display:flex;gap:14px;flex-wrap:wrap}
-  .stat{flex:1;min-width:150px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .stat{flex:1;min-width:130px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:16px}
   .stat .big{font-size:1.5rem;font-weight:800}
-  .eventlog{max-height:160px;overflow:auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;background:#0b0e1a;border:1px solid var(--line);border-radius:10px;padding:12px;color:#9fb4d4}
-  .eventlog div{padding:2px 0;border-bottom:1px dashed #1c2338}.k{color:var(--amber)}
+  .eventlog{max-height:260px;overflow:auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;background:#0b0e1a;border:1px solid var(--line);border-radius:10px;padding:12px;color:#9fb4d4}
+  .eventlog div{padding:3px 0;border-bottom:1px dashed #1c2338}.k{color:var(--amber)}
+  .evt-flag{color:#ff9a9a}
   pre{white-space:pre-wrap;word-break:break-word;background:#0b0e1a;border:1px solid var(--line);border-radius:10px;padding:14px;font-size:.78rem;color:#9fb4d4;max-height:300px;overflow:auto}
   table{width:100%;border-collapse:collapse;font-size:.85rem}
   th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
-  th{color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.4px}
+  th{color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.4px}
   tr:hover td{background:var(--panel2)}
   .tablewrap{overflow:auto;border:1px solid var(--line);border-radius:12px}
   .flex{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-  /* ---------- responsive / mobile ---------- */
+  .link{color:var(--accent);cursor:pointer;text-decoration:underline}
   @media (max-width:720px){
-    .wrap{padding:18px 14px 48px}
-    h1{font-size:1.35rem}
-    .card{padding:18px;border-radius:14px}
-    button{padding:12px 16px}
-    .taskbody{flex-direction:column;overflow:auto}
-    .essaycol{padding:16px}
-    #essay{min-height:150px}
-    .chatcol{border-left:0;border-top:1px solid var(--line);max-height:52vh}
-    .chatlog{max-height:34vh}
-    .topbar{gap:10px;padding:12px 14px;flex-wrap:wrap}
-    .timer{font-size:1.15rem}
-    #flagBanner{top:auto;bottom:0}
-    .likert label{padding:11px 0}
-    .likert .opt{min-width:32px}
-    .stat{min-width:calc(50% - 8px)}
-    th,td{padding:8px 8px;font-size:.8rem}
+    .wrap{padding:18px 14px 48px}h1{font-size:1.32rem}.card{padding:18px}
+    .taskbody{flex-direction:column;overflow:auto}.essaycol{padding:16px}#essay{min-height:150px}
+    .chatcol{border-left:0;border-top:1px solid var(--line);max-height:52vh}.chatlog{max-height:34vh}
+    .topbar{gap:10px;padding:12px 14px;flex-wrap:wrap}.timer{font-size:1.15rem}
+    #flagBanner{top:auto;bottom:0}.likert .opt{min-width:32px}.stat{min-width:calc(50% - 8px)}
+    th,td{padding:8px 8px;font-size:.8rem}.role{min-width:100%}
   }
-  @media (max-width:400px){
-    .likert{gap:4px}
-    .likert label{padding:9px 0;font-size:.82rem}
-  }
+  @media (max-width:400px){.likert{gap:4px}.likert label{padding:9px 0;font-size:.82rem}}
 </style>
 </head>
 <body>
@@ -125,30 +120,61 @@
     </div>
   </div>
 
-  <!-- ===== SETUP ===== -->
-  <div id="setupScreen">
+  <!-- ===== ROLE PICKER ===== -->
+  <div id="roleScreen">
     <div class="card">
-      <h1 data-i18n="title">Study control panel</h1>
-      <p data-i18n="subtitle">Preview any of the three conditions end-to-end: task → questionnaire → saved record.</p>
-      <p class="note" data-i18n="protoNote">⚠️ Demo build. The chatbot uses the live free model when the backend runs, otherwise a mock reply. All actions are captured.</p>
+      <h1 data-i18n="rolePick">Who is opening this?</h1>
+      <p data-i18n="rolePickSub">Choose how you want to enter the study.</p>
+      <div class="roles" style="margin-top:16px">
+        <button class="role" onclick="chooseRole('student')">
+          <div class="ic">🎓</div><h3 data-i18n="studentRole">Participant</h3>
+          <p data-i18n="studentRoleDesc">Take part in the study. You'll be assigned a task and answer a short questionnaire.</p>
+        </button>
+        <button class="role" onclick="chooseRole('researcher')">
+          <div class="ic">🔬</div><h3 data-i18n="researcherRole">Researcher</h3>
+          <p data-i18n="researcherRoleDesc">Control panel: choose a condition, preview, and inspect saved records & logs.</p>
+        </button>
+      </div>
     </div>
+  </div>
+
+  <!-- ===== STUDENT WELCOME / CONSENT ===== -->
+  <div id="studentWelcome" class="hidden">
     <div class="card">
-      <h2 data-i18n="chooseCond">Start a session</h2>
-      <div class="row">
+      <h1 data-i18n="welcomeTitle">Welcome, and thank you for taking part</h1>
+      <p data-i18n="welcomeBody">You will write a short essay (100–200 words) within a time limit, then answer a brief questionnaire. Please stay on this page and in fullscreen during the task. Your responses are recorded anonymously for research purposes.</p>
+      <div class="consent">
+        <input type="checkbox" id="consentBox" onchange="document.getElementById('beginBtn').disabled=!this.checked">
+        <label for="consentBox" data-i18n="consentText">I have read the above and I agree to take part in this study.</label>
+      </div>
+      <div class="flex">
+        <button id="beginBtn" onclick="beginStudent()" disabled data-i18n="beginBtn">Begin ▶</button>
+        <button class="ghost" onclick="show('roleScreen')" data-i18n="back">◀ Back</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== RESEARCHER SETUP ===== -->
+  <div id="setupScreen" class="hidden">
+    <div class="card">
+      <h1 data-i18n="ctrlTitle">Researcher control panel</h1>
+      <p data-i18n="ctrlSub">Preview any condition end-to-end and inspect the data it produces.</p>
+      <div class="row" style="margin-top:8px">
         <div><label class="field" data-i18n="condLabel">Condition</label>
           <select id="cond">
             <option value="control" data-i18n="optControl">Control — no AI, locked focus</option>
             <option value="supportive" data-i18n="optSupportive">Supportive — AI coach</option>
             <option value="substitutive" data-i18n="optSubstitutive">Substitutive — AI unrestricted</option>
           </select></div>
-        <div><label class="field" data-i18n="langLabel">Participant language</label>
+        <div><label class="field" data-i18n="langLabel">Language</label>
           <select id="taskLang"><option value="en">English</option><option value="nl">Nederlands</option></select></div>
         <div><label class="field" data-i18n="durLabel">Time limit (min)</label>
           <input id="minutes" type="number" value="10" min="1" max="30"/></div>
       </div>
       <div class="flex" style="margin-top:16px">
-        <button onclick="startTask()" data-i18n="startBtn">Start session ▶</button>
-        <button class="ghost" onclick="openRecords()" data-i18n="viewRecords">View saved records</button>
+        <button onclick="startResearcher()" data-i18n="startBtn">Start session ▶</button>
+        <button class="ghost" onclick="openRecords()" data-i18n="viewRecords">Records & logs</button>
+        <button class="ghost" onclick="show('roleScreen')" data-i18n="back">◀ Back</button>
       </div>
     </div>
   </div>
@@ -169,23 +195,29 @@
     </div>
   </div>
 
-  <!-- ===== RESULTS ===== -->
+  <!-- ===== STUDENT THANKS ===== -->
+  <div id="studentThanks" class="hidden">
+    <div class="card" style="text-align:center">
+      <div style="font-size:2.4rem">✅</div>
+      <h1 data-i18n="thanksTitle">Thank you for participating!</h1>
+      <p data-i18n="thanksBody">Your responses have been recorded. You may now close this window. If you have questions about the study, please contact the researcher.</p>
+    </div>
+  </div>
+
+  <!-- ===== RESULTS (researcher) ===== -->
   <div id="resultScreen" class="hidden">
     <div class="card">
-      <h1 data-i18n="doneTitle">Thank you — session saved</h1>
-      <p data-i18n="doneBody">This is the record stored for this participant.</p>
+      <h1 data-i18n="doneTitle">Session saved</h1>
+      <p data-i18n="doneBody">Data stored for this participant.</p>
       <div class="grid3" style="margin:16px 0">
         <div class="stat"><div class="big" id="rTime">–</div><div class="note" data-i18n="rTimeL">Time on task</div></div>
         <div class="stat"><div class="big" id="rFlags">–</div><div class="note" data-i18n="rFlagsL">Flag events</div></div>
         <div class="stat"><div class="big" id="rWords">–</div><div class="note" data-i18n="rWordsL">Word count</div></div>
       </div>
-      <h3 data-i18n="eventLogTitle">Event log</h3>
-      <div class="eventlog" id="resultLog"></div>
-      <h3 style="margin-top:16px" data-i18n="jsonTitle">Full data record (JSON)</h3>
-      <pre id="resultJson"></pre>
-      <div class="flex" style="margin-top:14px">
-        <button onclick="openRecords()" data-i18n="viewRecords">View saved records</button>
-        <button class="ghost" onclick="location.reload()" data-i18n="restart">↺ New session</button>
+      <div class="flex">
+        <button onclick="openLogFor(state._record)" data-i18n="viewLogs">View behaviour log</button>
+        <button class="ghost" onclick="openRecords()" data-i18n="viewRecords">Records & logs</button>
+        <button class="ghost" onclick="restart()" data-i18n="restart">↺ New session</button>
       </div>
     </div>
   </div>
@@ -194,7 +226,7 @@
   <div id="recordsScreen" class="hidden">
     <div class="card">
       <div class="flex" style="justify-content:space-between">
-        <h1 data-i18n="recordsTitle">Saved participant records</h1>
+        <h1 data-i18n="recordsTitle">Records & logs</h1>
         <div class="flex">
           <button class="ghost small" onclick="downloadCSV()" data-i18n="csv">⬇ CSV</button>
           <button class="ghost small" onclick="clearAllRecords()" data-i18n="clearAll">🗑 Clear all</button>
@@ -203,7 +235,25 @@
       </div>
       <p class="note" id="recordsCount"></p>
       <div class="tablewrap"><table id="recTable"></table></div>
-      <p class="note" style="margin-top:12px" data-i18n="recordsNote">Rows above the line are earlier participants (sample data); your latest session appears highlighted at the top when present.</p>
+      <p class="note" style="margin-top:12px" data-i18n="recordsNote">Click “Log” on any row to see that participant's full behaviour (tab leaves, focus loss, fullscreen exits, paste attempts) and event timeline.</p>
+    </div>
+  </div>
+
+  <!-- ===== LOG DETAIL ===== -->
+  <div id="logScreen" class="hidden">
+    <div class="card">
+      <div class="flex" style="justify-content:space-between">
+        <h1 id="logTitle">Behaviour log</h1>
+        <button class="ghost small" onclick="openRecords()" data-i18n="backRecords">◀ Records</button>
+      </div>
+      <p class="note" id="logSub"></p>
+      <div class="grid3" style="margin:16px 0" id="logStats"></div>
+      <h3 data-i18n="timeline">Event timeline</h3>
+      <div class="eventlog" id="logTimeline"></div>
+      <h3 style="margin-top:16px" data-i18n="essayLabel">Essay</h3>
+      <pre id="logEssay"></pre>
+      <h3 data-i18n="chatLabel">AI conversation</h3>
+      <pre id="logChat"></pre>
     </div>
   </div>
 </div>
@@ -244,114 +294,126 @@
 </div>
 
 <script>
-/* ---------------- backend base ---------------- */
-const BACKEND_URL = "";
-function apiBase(){ if(BACKEND_URL) return BACKEND_URL.replace(/\/$/,""); if(location.protocol.indexOf("http")===0) return ""; return null; }
+const BACKEND_URL="";
+function apiBase(){if(BACKEND_URL)return BACKEND_URL.replace(/\/$/,"");if(location.protocol.indexOf("http")===0)return "";return null;}
 
-/* ---------------- i18n ---------------- */
 const T={
- en:{title:"Study control panel",subtitle:"Preview any of the three conditions end-to-end: task → questionnaire → saved record.",
-  protoNote:"⚠️ Demo build. The chatbot uses the live free model when the backend runs, otherwise a mock reply. All actions are captured.",
-  chooseCond:"Start a session",condLabel:"Condition",langLabel:"Participant language",durLabel:"Time limit (min)",
+ en:{rolePick:"Who is opening this?",rolePickSub:"Choose how you want to enter the study.",
+  studentRole:"Participant",studentRoleDesc:"Take part in the study. You'll be assigned a task and answer a short questionnaire.",
+  researcherRole:"Researcher",researcherRoleDesc:"Control panel: choose a condition, preview, and inspect saved records & logs.",
+  welcomeTitle:"Welcome, and thank you for taking part",
+  welcomeBody:"You will write a short essay (100–200 words) within a time limit, then answer a brief questionnaire. Please stay on this page and in fullscreen during the task. Your responses are recorded anonymously for research purposes.",
+  consentText:"I have read the above and I agree to take part in this study.",beginBtn:"Begin ▶",
+  ctrlTitle:"Researcher control panel",ctrlSub:"Preview any condition end-to-end and inspect the data it produces.",
+  condLabel:"Condition",langLabel:"Language",durLabel:"Time limit (min)",
   optControl:"Control — no AI, locked focus",optSupportive:"Supportive — AI coach",optSubstitutive:"Substitutive — AI unrestricted",
-  startBtn:"Start session ▶",viewRecords:"View saved records",submitBtn:"Submit",
+  startBtn:"Start session ▶",viewRecords:"Records & logs",back:"◀ Back",submitBtn:"Submit",
   promptTitle:"Essay prompt",promptText:"[Placeholder] Write a short essay (100–200 words) on the given topic. The final topic will be set once the dependent variable is decided.",
   send:"Send",flagMsg:"⚠️ Please stay on this page and in fullscreen. This event has been recorded.",
   fsExitTitle:"You left fullscreen",fsExitBody:"The task must be done in fullscreen. This has been recorded.",fsReturn:"Return to fullscreen",
-  surveyIntro:"Please answer based on how you just experienced the task.",back:"◀ Back",next:"Next ▶",finish:"Finish ✓",
-  doneTitle:"Thank you — session saved",doneBody:"This is the record stored for this participant.",
-  rTimeL:"Time on task",rFlagsL:"Flag events",rWordsL:"Word count",eventLogTitle:"Event log",jsonTitle:"Full data record (JSON)",restart:"↺ New session",
-  recordsTitle:"Saved participant records",recordsNote:"Rows are earlier participants (sample data); your latest session appears highlighted at the top when present.",
-  csv:"⬇ CSV",home:"Home",words:"words",clearAll:"🗑 Clear all",del:"Delete",confirmClear:"Delete ALL records? This cannot be undone.",colDel:"",
+  surveyIntro:"Please answer based on how you just experienced the task.",next:"Next ▶",finish:"Finish ✓",
+  thanksTitle:"Thank you for participating!",thanksBody:"Your responses have been recorded. You may now close this window. If you have questions about the study, please contact the researcher.",
+  doneTitle:"Session saved",doneBody:"Data stored for this participant.",rTimeL:"Time on task",rFlagsL:"Flag events",rWordsL:"Word count",
+  viewLogs:"View behaviour log",restart:"↺ New session",
+  recordsTitle:"Records & logs",recordsNote:"Click “Log” on any row to see that participant's full behaviour (tab leaves, focus loss, fullscreen exits, paste attempts) and event timeline.",
+  csv:"⬇ CSV",clearAll:"🗑 Clear all",home:"Home",words:"words",del:"Delete",confirmClear:"Delete ALL records? This cannot be undone.",
   coachNote:"Coach mode: the assistant only gives hints & feedback, never a full essay. Copy/paste is disabled.",
   freeNote:"Unrestricted: the assistant may write anything; copy/paste allowed.",
   botCoach:"(Coach mode) I can help you brainstorm and structure your ideas, but I won't write the essay for you. What's your main point so far?",
   botFree:"(Unrestricted) Sure — here's a full draft you could start from... [live study calls the AI model].",
   pasteBlocked:"Paste is disabled in this condition — recorded.",copyBlocked:"Copying from the assistant is disabled here.",
   scaleLo:"Strongly disagree",scaleHi:"Strongly agree",selPick:"Select…",
-  gMale:"Male",gFemale:"Female",gOther:"Other / prefer not to say",
-  fNever:"Never",fRarely:"Rarely",fWeekly:"Weekly",fDaily:"Daily",
-  colId:"ID",colCond:"Condition",colLang:"Lang",colWords:"Words",colTime:"Time",colFlags:"Flags",colReliance:"AI-reliance",colDate:"When"},
- nl:{title:"Studie-configuratiepaneel",subtitle:"Bekijk elk van de drie condities van begin tot eind: taak → vragenlijst → opgeslagen record.",
-  protoNote:"⚠️ Demo. De chatbot gebruikt het gratis live model als de backend draait, anders een nep-antwoord. Alle acties worden vastgelegd.",
-  chooseCond:"Start een sessie",condLabel:"Conditie",langLabel:"Taal deelnemer",durLabel:"Tijdslimiet (min)",
+  gMale:"Male",gFemale:"Female",gOther:"Other / prefer not to say",fNever:"Never",fRarely:"Rarely",fWeekly:"Weekly",fDaily:"Daily",
+  colId:"ID",colCond:"Condition",colLang:"Lang",colWords:"Words",colTime:"Time",colFlags:"Flags",colReliance:"AI-reliance",colDate:"When",colLog:"",
+  logTitle:"Behaviour log",backRecords:"◀ Records",timeline:"Event timeline",essayLabel:"Essay",chatLabel:"AI conversation",
+  mLeaves:"Left the tab",mBlur:"Switched away (focus lost)",mFull:"Left fullscreen",mPaste:"Paste attempts",mChat:"Chat messages",mTime:"Time on task",
+  assignedNote:"You have been randomly assigned to a condition."},
+ nl:{rolePick:"Wie opent dit?",rolePickSub:"Kies hoe je de studie wilt openen.",
+  studentRole:"Deelnemer",studentRoleDesc:"Doe mee aan de studie. Je krijgt een taak en beantwoordt een korte vragenlijst.",
+  researcherRole:"Onderzoeker",researcherRoleDesc:"Configuratiepaneel: kies een conditie, bekijk en inspecteer opgeslagen records & logs.",
+  welcomeTitle:"Welkom, en bedankt voor je deelname",
+  welcomeBody:"Je schrijft een kort essay (100–200 woorden) binnen een tijdslimiet en beantwoordt daarna een korte vragenlijst. Blijf tijdens de taak op deze pagina en in volledig scherm. Je antwoorden worden anoniem vastgelegd voor onderzoek.",
+  consentText:"Ik heb het bovenstaande gelezen en ga akkoord met deelname aan deze studie.",beginBtn:"Beginnen ▶",
+  ctrlTitle:"Onderzoeker-configuratiepaneel",ctrlSub:"Bekijk elke conditie van begin tot eind en inspecteer de data.",
+  condLabel:"Conditie",langLabel:"Taal",durLabel:"Tijdslimiet (min)",
   optControl:"Controle — geen AI, vergrendelde focus",optSupportive:"Ondersteunend — AI-coach",optSubstitutive:"Vervangend — AI onbeperkt",
-  startBtn:"Sessie starten ▶",viewRecords:"Opgeslagen records",submitBtn:"Inleveren",
+  startBtn:"Sessie starten ▶",viewRecords:"Records & logs",back:"◀ Terug",submitBtn:"Inleveren",
   promptTitle:"Essay-opdracht",promptText:"[Plaatshouder] Schrijf een kort essay (100–200 woorden) over het gegeven onderwerp. Het onderwerp volgt zodra de afhankelijke variabele vaststaat.",
   send:"Stuur",flagMsg:"⚠️ Blijf op deze pagina en in volledig scherm. Dit is vastgelegd.",
   fsExitTitle:"Je hebt volledig scherm verlaten",fsExitBody:"De taak moet in volledig scherm. Dit is vastgelegd.",fsReturn:"Terug naar volledig scherm",
-  surveyIntro:"Beantwoord op basis van hoe je de taak zojuist ervoer.",back:"◀ Terug",next:"Volgende ▶",finish:"Afronden ✓",
-  doneTitle:"Bedankt — sessie opgeslagen",doneBody:"Dit is het opgeslagen record voor deze deelnemer.",
-  rTimeL:"Tijd op taak",rFlagsL:"Markeringen",rWordsL:"Aantal woorden",eventLogTitle:"Logboek",jsonTitle:"Volledig datarecord (JSON)",restart:"↺ Nieuwe sessie",
-  recordsTitle:"Opgeslagen deelnemer-records",recordsNote:"Rijen zijn eerdere deelnemers (voorbeelddata); je laatste sessie staat gemarkeerd bovenaan.",
-  csv:"⬇ CSV",home:"Start",words:"woorden",clearAll:"🗑 Alles wissen",del:"Verwijder",confirmClear:"ALLE records verwijderen? Dit kan niet ongedaan worden.",colDel:"",
+  surveyIntro:"Beantwoord op basis van hoe je de taak zojuist ervoer.",next:"Volgende ▶",finish:"Afronden ✓",
+  thanksTitle:"Bedankt voor je deelname!",thanksBody:"Je antwoorden zijn vastgelegd. Je kunt dit venster nu sluiten. Bij vragen over de studie, neem contact op met de onderzoeker.",
+  doneTitle:"Sessie opgeslagen",doneBody:"Data opgeslagen voor deze deelnemer.",rTimeL:"Tijd op taak",rFlagsL:"Markeringen",rWordsL:"Aantal woorden",
+  viewLogs:"Gedrags-log bekijken",restart:"↺ Nieuwe sessie",
+  recordsTitle:"Records & logs",recordsNote:"Klik op “Log” bij een rij om het volledige gedrag (tabwissels, focusverlies, volledig scherm verlaten, plakpogingen) en de tijdlijn te zien.",
+  csv:"⬇ CSV",clearAll:"🗑 Alles wissen",home:"Start",words:"woorden",del:"Verwijder",confirmClear:"ALLE records verwijderen? Dit kan niet ongedaan worden.",
   coachNote:"Coachmodus: de assistent geeft alleen hints & feedback, nooit een volledig essay. Kopiëren/plakken uit.",
   freeNote:"Onbeperkt: de assistent mag alles schrijven; kopiëren/plakken toegestaan.",
   botCoach:"(Coachmodus) Ik help je graag brainstormen en structureren, maar ik schrijf het essay niet voor je. Wat is je hoofdpunt?",
   botFree:"(Onbeperkt) Zeker — hier is een concept om mee te starten... [live studie roept het AI-model aan].",
-  pasteBlocked:"Plakken is uitgeschakeld in deze conditie — vastgelegd.",copyBlocked:"Kopiëren van de assistent is hier uitgeschakeld.",
+  pasteBlocked:"Plakken is uitgeschakeld — vastgelegd.",copyBlocked:"Kopiëren van de assistent is hier uitgeschakeld.",
   scaleLo:"Helemaal oneens",scaleHi:"Helemaal eens",selPick:"Kies…",
-  gMale:"Man",gFemale:"Vrouw",gOther:"Anders / zeg ik liever niet",
-  fNever:"Nooit",fRarely:"Zelden",fWeekly:"Wekelijks",fDaily:"Dagelijks",
-  colId:"ID",colCond:"Conditie",colLang:"Taal",colWords:"Woorden",colTime:"Tijd",colFlags:"Mark.",colReliance:"AI-steun",colDate:"Wanneer"}
+  gMale:"Man",gFemale:"Vrouw",gOther:"Anders / zeg ik liever niet",fNever:"Nooit",fRarely:"Zelden",fWeekly:"Wekelijks",fDaily:"Dagelijks",
+  colId:"ID",colCond:"Conditie",colLang:"Taal",colWords:"Woorden",colTime:"Tijd",colFlags:"Mark.",colReliance:"AI-steun",colDate:"Wanneer",colLog:"",
+  logTitle:"Gedrags-log",backRecords:"◀ Records",timeline:"Tijdlijn",essayLabel:"Essay",chatLabel:"AI-gesprek",
+  mLeaves:"Tab verlaten",mBlur:"Weggeschakeld (focus kwijt)",mFull:"Volledig scherm verlaten",mPaste:"Plakpogingen",mChat:"Chatberichten",mTime:"Tijd op taak",
+  assignedNote:"Je bent willekeurig aan een conditie toegewezen."}
 };
 let LANG="en";
 function setLang(l){LANG=l;document.documentElement.lang=l;
-  document.querySelectorAll('[data-i18n]').forEach(e=>{const k=e.getAttribute('data-i18n');if(T[l][k])e.textContent=T[l][k];});
+  document.querySelectorAll('[data-i18n]').forEach(e=>{const k=e.getAttribute('data-i18n');if(T[l][k]!=null)e.textContent=T[l][k];});
   if(!document.getElementById('surveyScreen').classList.contains('hidden'))renderSurvey();
   if(!document.getElementById('recordsScreen').classList.contains('hidden'))renderRecords();}
-setLang('en');
 
-/* ---------------- survey definition ---------------- */
 function surveyPages(cond,l){
   const L=T[l];
   const common=[
     {id:"demand",text:{en:"The task was mentally demanding.",nl:"De taak was mentaal veeleisend."}},
     {id:"confidence",text:{en:"I feel confident about the essay I produced.",nl:"Ik ben zeker over het essay dat ik maakte."}},
     {id:"effort",text:{en:"I put a lot of effort into the essay.",nl:"Ik heb veel moeite in het essay gestoken."}},
-    {id:"timepressure",text:{en:"I felt time pressure during the task.",nl:"Ik voelde tijdsdruk tijdens de taak."}}
-  ];
+    {id:"timepressure",text:{en:"I felt time pressure during the task.",nl:"Ik voelde tijdsdruk tijdens de taak."}}];
   const aiItems=[
     {id:"reliance",text:{en:"I relied on the AI to complete the task.",nl:"Ik leunde op de AI om de taak te voltooien."}},
     {id:"couldWithout",text:{en:"I could have written this essay without any help.",nl:"Ik had dit essay zonder hulp kunnen schrijven."}},
     {id:"trust",text:{en:"I trusted the assistant's suggestions.",nl:"Ik vertrouwde de suggesties van de assistent."}},
-    {id:"easier",text:{en:"Using the assistant made the task easier.",nl:"De assistent maakte de taak makkelijker."}}
-  ];
+    {id:"easier",text:{en:"Using the assistant made the task easier.",nl:"De assistent maakte de taak makkelijker."}}];
   const selfItems=[
     {id:"couldWithout",text:{en:"I could have written this essay without any help.",nl:"Ik had dit essay zonder hulp kunnen schrijven."}},
     {id:"wantedHelp",text:{en:"I wished I had help while writing.",nl:"Ik wenste dat ik hulp had tijdens het schrijven."}},
-    {id:"independent",text:{en:"I felt in full control of the writing.",nl:"Ik had volledige controle over het schrijven."}}
-  ];
-  const p2 = (cond==='control')
-    ? {title:{en:"Self-reliance",nl:"Zelfstandigheid"},items:selfItems}
-    : {title:{en:"Working with the AI",nl:"Werken met de AI"},items:aiItems};
-  const p3 = {title:{en:"About you",nl:"Over jou"},items:[
+    {id:"independent",text:{en:"I felt in full control of the writing.",nl:"Ik had volledige controle over het schrijven."}}];
+  const p2=(cond==='control')?{title:{en:"Self-reliance",nl:"Zelfstandigheid"},items:selfItems}:{title:{en:"Working with the AI",nl:"Werken met de AI"},items:aiItems};
+  const p3={title:{en:"About you",nl:"Over jou"},items:[
     {id:"age",type:"number",text:{en:"Age",nl:"Leeftijd"}},
     {id:"gender",type:"select",text:{en:"Gender",nl:"Geslacht"},options:[["male",L.gMale],["female",L.gFemale],["other",L.gOther]]},
     {id:"ai_freq",type:"select",text:{en:"How often do you use AI tools?",nl:"Hoe vaak gebruik je AI-tools?"},options:[["never",L.fNever],["rarely",L.fRarely],["weekly",L.fWeekly],["daily",L.fDaily]]},
-    {id:"comments",type:"text",text:{en:"Any comments? (optional)",nl:"Opmerkingen? (optioneel)"}}
-  ]};
+    {id:"comments",type:"text",text:{en:"Any comments? (optional)",nl:"Opmerkingen? (optioneel)"}}]};
   return [{title:{en:"Task experience",nl:"Taakervaring"},items:common}, p2, p3];
 }
 
-/* ---------------- state ---------------- */
 let state={};
 function now(){return new Date();}
 function fmtClock(ms){const s=Math.max(0,Math.round(ms/1000));return Math.floor(s/60)+":"+String(s%60).padStart(2,'0');}
-function show(id){["setupScreen","surveyScreen","resultScreen","recordsScreen"].forEach(s=>document.getElementById(s).classList.add('hidden'));document.getElementById(id).classList.remove('hidden');window.scrollTo(0,0);}
+const SCREENS=["roleScreen","studentWelcome","setupScreen","surveyScreen","studentThanks","resultScreen","recordsScreen","logScreen"];
+function show(id){SCREENS.forEach(s=>document.getElementById(s).classList.add('hidden'));document.getElementById(id).classList.remove('hidden');window.scrollTo(0,0);}
 
-/* ---------------- logging ---------------- */
 function logEvent(type,detail){const t=now();const e={type,detail:detail||'',sinceStartMs:t-state.startTime};state.events.push(e);
   if(['tab_leave','fullscreen_exit','paste_blocked','window_blur','copy_blocked'].includes(type)){state.flags++;const p=document.getElementById('flagCount');if(p)p.textContent='⚑ '+state.flags;}}
 
-/* ---------------- start task ---------------- */
-function startTask(){
-  const cond=document.getElementById('cond').value,lang=document.getElementById('taskLang').value,minutes=parseInt(document.getElementById('minutes').value)||10;
+/* ---- role / entry ---- */
+function chooseRole(r){if(r==='student')show('studentWelcome');else show('setupScreen');}
+function balancedCondition(){const c={control:0,supportive:0,substitutive:0};RECORDS.forEach(r=>{if(c[r.condition]!=null)c[r.condition]++;});
+  let best='control',min=Infinity;['control','supportive','substitutive'].forEach(k=>{if(c[k]<min){min=c[k];best=k;}});return best;}
+function beginStudent(){const cond=balancedCondition();beginSession(cond,LANG,10,'student');}
+function startResearcher(){const cond=document.getElementById('cond').value,lang=document.getElementById('taskLang').value,minutes=parseInt(document.getElementById('minutes').value)||10;beginSession(cond,lang,minutes,'researcher');}
+function restart(){show(state.mode==='student'?'roleScreen':'setupScreen');}
+
+/* ---- session ---- */
+function beginSession(cond,lang,minutes,mode){
   setLang(lang);
-  state={condition:cond,lang,minutes,events:[],flags:0,startTime:now(),chat:[],survey:{},tabLeaveStart:null,participantId:'P-'+Math.floor(Math.random()*1e6).toString(36).toUpperCase()};
-  document.getElementById('setupScreen').classList.add('hidden');
+  state={condition:cond,lang,minutes,mode,events:[],flags:0,startTime:now(),chat:[],survey:{},tabLeaveStart:null,participantId:'P-'+Math.floor(Math.random()*1e6).toString(36).toUpperCase()};
+  SCREENS.forEach(s=>document.getElementById(s).classList.add('hidden'));
   document.getElementById('taskScreen').classList.remove('hidden');
-  const badge=document.getElementById('condBadge');badge.className='badge '+({control:'b-control',supportive:'b-supportive',substitutive:'b-substitutive'}[cond]);badge.textContent=cond.toUpperCase();
+  const badge=document.getElementById('condBadge');badge.className='badge b-'+cond;badge.textContent=cond.toUpperCase();
   document.getElementById('flagCount').classList.remove('hidden');document.getElementById('flagCount').textContent='⚑ 0';
   const chatcol=document.getElementById('chatcol');
   if(cond==='control')chatcol.classList.add('hidden');
@@ -374,7 +436,6 @@ function flashBanner(msg){const b=document.getElementById('flagBanner');b.textCo
 function countWords(s){s=s.trim();return s?s.split(/\s+/).length:0;}
 function updateWords(){const n=countWords(document.getElementById('essay').value);const ok=n>=100&&n<=200;document.getElementById('wc').innerHTML='<b>'+n+'</b> '+T[state.lang].words;document.getElementById('wc').className='wordcount'+(ok?' ok':'');document.getElementById('wc2').innerHTML='<b>'+n+'</b> / 100–200';state.words=n;}
 
-/* ---------------- chat ---------------- */
 function addMsg(role,text){const log=document.getElementById('chatlog');const d=document.createElement('div');d.className='msg '+role;d.textContent=text;if(role==='bot'&&state.condition==='supportive'){d.addEventListener('copy',ev=>{ev.preventDefault();logEvent('copy_blocked','chat');flashBanner(T[state.lang].copyBlocked);});d.style.userSelect='none';}log.appendChild(d);log.scrollTop=log.scrollHeight;}
 async function sendChat(){const inp=document.getElementById('chatInput');const txt=inp.value.trim();if(!txt)return;addMsg('user',txt);state.chat.push({role:'user',text:txt});logEvent('chat_user_msg','len='+txt.length);inp.value='';
   const base=apiBase();
@@ -385,12 +446,10 @@ async function sendChat(){const inp=document.getElementById('chatInput');const t
   setTimeout(()=>{const reply=state.condition==='supportive'?T[state.lang].botCoach:T[state.lang].botFree;addMsg('bot',reply);state.chat.push({role:'assistant',text:reply});logEvent('chat_bot_msg','mock');},400);
 }
 
-/* ---------------- submit -> survey ---------------- */
 function submitTask(){if(state._submitted)return;state._submitted=true;clearInterval(state.timerInt);logEvent('task_submit');state.totalTimeMs=now()-state.startTime;
   if(document.fullscreenElement&&document.exitFullscreen)document.exitFullscreen().catch(()=>{});
   document.getElementById('taskScreen').classList.add('hidden');state.page=0;show('surveyScreen');renderSurvey();}
 
-/* ---------------- survey render ---------------- */
 function renderSurvey(){const pages=surveyPages(state.condition,state.lang);const p=pages[state.page];
   document.getElementById('surveyTitle').textContent=p.title[state.lang];
   const steps=document.getElementById('steps');steps.innerHTML='';pages.forEach((_,i)=>{const d=document.createElement('div');d.className='s'+(i<state.page?' done':i===state.page?' active':'');steps.appendChild(d);});
@@ -409,58 +468,78 @@ function savePage(){const pages=surveyPages(state.condition,state.lang);pages[st
 function surveyBack(){savePage();if(state.page>0){state.page--;renderSurvey();}}
 function surveyNext(){savePage();const pages=surveyPages(state.condition,state.lang);if(state.page<pages.length-1){state.page++;renderSurvey();}else finishStudy();}
 
-/* ---------------- finish -> record ---------------- */
 function aiRelianceScore(sv){const vals=['reliance','trust','easier'].map(k=>sv[k]).filter(v=>typeof v==='number');if(!vals.length)return null;return +(vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1);}
 function finishStudy(){
-  const rec={participantId:state.participantId,condition:state.condition,language:state.lang,timeLimitMin:state.minutes,
-    totalTimeSec:Math.round(state.totalTimeMs/1000),wordCount:state.words||0,flagCount:state.flags,
-    aiReliance:aiRelianceScore(state.survey),survey:state.survey,essay:document.getElementById('essay').value,
-    chatTurns:state.chat.filter(m=>m.role==='user').length,chat:state.chat.map(m=>({role:m.role,text:m.text})),
-    events:state.events,when:"just now"};
-  RECORDS.unshift(rec);state._record=rec;showResults(rec);
+  const rec={participantId:state.participantId,mode:state.mode,condition:state.condition,language:state.lang,timeLimitMin:state.minutes,
+    totalTimeSec:Math.round(state.totalTimeMs/1000),wordCount:state.words||0,flagCount:state.flags,aiReliance:aiRelianceScore(state.survey),
+    survey:state.survey,essay:document.getElementById('essay').value,chatTurns:state.chat.filter(m=>m.role==='user').length,
+    chat:state.chat.map(m=>({role:m.role,text:m.text})),events:state.events,when:"just now"};
+  RECORDS.unshift(rec);state._record=rec;
+  if(state.mode==='student')show('studentThanks');
+  else showResults(rec);
 }
 function showResults(rec){show('resultScreen');
   document.getElementById('rTime').textContent=fmtClock(rec.totalTimeSec*1000);
   document.getElementById('rFlags').textContent=rec.flagCount;
   document.getElementById('rWords').textContent=rec.wordCount;
-  const box=document.getElementById('resultLog');box.innerHTML='';rec.events.forEach(e=>{const d=document.createElement('div');d.innerHTML='<span class="k">'+fmtClock(e.sinceStartMs)+'</span> — '+e.type+(e.detail?' <span style="color:#6b7290">('+e.detail+')</span>':'');box.appendChild(d);});
-  const disp=Object.assign({},rec);delete disp.events;document.getElementById('resultJson').textContent=JSON.stringify(disp,null,2);
 }
 
-/* ---------------- dummy previous participants ---------------- */
+/* ---- events -> counts ---- */
+function countEvents(rec){const c={tab_leave:0,window_blur:0,fullscreen_exit:0,paste_blocked:0,chat_user_msg:0};(rec.events||[]).forEach(e=>{if(c[e.type]!=null)c[e.type]++;});return c;}
+
+/* ---- dummy previous participants (with events for the log view) ---- */
+function ev(type,sec,detail){return {type,detail:detail||'',sinceStartMs:sec*1000};}
 const RECORDS=[
- {participantId:"P-4KZ9A",condition:"control",language:"en",wordCount:142,totalTimeSec:588,flagCount:3,aiReliance:null,survey:{demand:6,confidence:4,effort:6,timepressure:5,couldWithout:6,age:22,gender:"female",ai_freq:"weekly"},chatTurns:0,when:"2026-07-28"},
- {participantId:"P-7QW2C",condition:"supportive",language:"nl",wordCount:178,totalTimeSec:512,flagCount:0,aiReliance:4.3,survey:{demand:4,confidence:6,effort:5,timepressure:3,reliance:4,trust:5,easier:4,couldWithout:5,age:25,gender:"male",ai_freq:"daily"},chatTurns:6,when:"2026-07-28"},
- {participantId:"P-1MB8T",condition:"substitutive",language:"en",wordCount:196,totalTimeSec:214,flagCount:1,aiReliance:6.7,survey:{demand:2,confidence:5,effort:2,timepressure:2,reliance:7,trust:7,easier:6,couldWithout:2,age:29,gender:"female",ai_freq:"daily"},chatTurns:4,when:"2026-07-29"},
- {participantId:"P-9XR3D",condition:"control",language:"nl",wordCount:118,totalTimeSec:600,flagCount:5,aiReliance:null,survey:{demand:7,confidence:3,effort:7,timepressure:6,couldWithout:4,age:20,gender:"other",ai_freq:"rarely"},chatTurns:0,when:"2026-07-30"},
- {participantId:"P-5TP6L",condition:"supportive",language:"en",wordCount:165,totalTimeSec:470,flagCount:1,aiReliance:3.7,survey:{demand:5,confidence:5,effort:6,timepressure:4,reliance:3,trust:4,easier:4,couldWithout:6,age:31,gender:"male",ai_freq:"weekly"},chatTurns:5,when:"2026-07-30"},
- {participantId:"P-3JD0F",condition:"substitutive",language:"nl",wordCount:189,totalTimeSec:243,flagCount:0,aiReliance:6.0,survey:{demand:3,confidence:6,effort:3,timepressure:2,reliance:6,trust:6,easier:6,couldWithout:3,age:24,gender:"female",ai_freq:"daily"},chatTurns:3,when:"2026-07-31"}
+ {participantId:"P-4KZ9A",mode:"student",condition:"control",language:"en",wordCount:142,totalTimeSec:588,flagCount:3,aiReliance:null,survey:{demand:6,confidence:4,effort:6,timepressure:5,couldWithout:6,age:22,gender:"female",ai_freq:"weekly"},chatTurns:0,chat:[],when:"2026-07-28",
+   events:[ev('task_start',0),ev('typing_started',8),ev('tab_leave',95,'hidden'),ev('tab_return',128,'away_ms=33000'),ev('window_blur',210),ev('fullscreen_exit',240),ev('paste_blocked',300,'essay'),ev('task_submit',588)]},
+ {participantId:"P-7QW2C",mode:"student",condition:"supportive",language:"nl",wordCount:178,totalTimeSec:512,flagCount:0,aiReliance:4.3,survey:{demand:4,confidence:6,effort:5,timepressure:3,reliance:4,trust:5,easier:4,couldWithout:5,age:25,gender:"male",ai_freq:"daily"},chatTurns:6,chat:[{role:"user",text:"hint?"},{role:"assistant",text:"What's your main argument?"}],when:"2026-07-28",
+   events:[ev('task_start',0),ev('typing_started',12),ev('chat_user_msg',40),ev('chat_bot_msg',42),ev('chat_user_msg',120),ev('task_submit',512)]},
+ {participantId:"P-1MB8T",mode:"student",condition:"substitutive",language:"en",wordCount:196,totalTimeSec:214,flagCount:1,aiReliance:6.7,survey:{demand:2,confidence:5,effort:2,timepressure:2,reliance:7,trust:7,easier:6,couldWithout:2,age:29,gender:"female",ai_freq:"daily"},chatTurns:4,chat:[{role:"user",text:"write it"},{role:"assistant",text:"Here is a draft..."}],when:"2026-07-29",
+   events:[ev('task_start',0),ev('chat_user_msg',15),ev('paste_allowed',30,'essay'),ev('window_blur',60),ev('task_submit',214)]},
+ {participantId:"P-9XR3D",mode:"student",condition:"control",language:"nl",wordCount:118,totalTimeSec:600,flagCount:5,aiReliance:null,survey:{demand:7,confidence:3,effort:7,timepressure:6,couldWithout:4,age:20,gender:"other",ai_freq:"rarely"},chatTurns:0,chat:[],when:"2026-07-30",
+   events:[ev('task_start',0),ev('tab_leave',50),ev('tab_return',70),ev('tab_leave',150),ev('tab_return',180),ev('fullscreen_exit',220),ev('window_blur',300),ev('paste_blocked',360),ev('task_submit',600)]},
+ {participantId:"P-5TP6L",mode:"student",condition:"supportive",language:"en",wordCount:165,totalTimeSec:470,flagCount:1,aiReliance:3.7,survey:{demand:5,confidence:5,effort:6,timepressure:4,reliance:3,trust:4,easier:4,couldWithout:6,age:31,gender:"male",ai_freq:"weekly"},chatTurns:5,chat:[{role:"user",text:"structure tips"},{role:"assistant",text:"Try intro-body-conclusion."}],when:"2026-07-30",
+   events:[ev('task_start',0),ev('typing_started',10),ev('chat_user_msg',55),ev('window_blur',200),ev('task_submit',470)]},
+ {participantId:"P-3JD0F",mode:"student",condition:"substitutive",language:"nl",wordCount:189,totalTimeSec:243,flagCount:0,aiReliance:6.0,survey:{demand:3,confidence:6,effort:3,timepressure:2,reliance:6,trust:6,easier:6,couldWithout:3,age:24,gender:"female",ai_freq:"daily"},chatTurns:3,chat:[{role:"user",text:"schrijf een essay"},{role:"assistant",text:"Hier is een concept..."}],when:"2026-07-31",
+   events:[ev('task_start',0),ev('chat_user_msg',20),ev('paste_allowed',35),ev('task_submit',243)]}
 ];
 const SEED_COUNT=RECORDS.length;
+const condBadgeHtml=c=>'<span class="badge b-'+c+'">'+c[0].toUpperCase()+c.slice(1)+'</span>';
 
-function condBadgeHtml(c){return '<span class="badge b-'+c+'">'+c[0].toUpperCase()+c.slice(1)+'</span>';}
-function renderRecords(){const l=state&&state.lang?state.lang:LANG;const L=T[l];
-  const tbl=document.getElementById('recTable');
-  tbl.innerHTML='<tr><th>'+L.colId+'</th><th>'+L.colCond+'</th><th>'+L.colLang+'</th><th>'+L.colWords+'</th><th>'+L.colTime+'</th><th>'+L.colFlags+'</th><th>'+L.colReliance+'</th><th>'+L.colDate+'</th><th></th></tr>'+
-   RECORDS.map((r,i)=>{const hot=(state&&state._record===r);return '<tr'+(hot?' style="outline:2px solid var(--accent);outline-offset:-2px"':'')+'><td>'+r.participantId+'</td><td>'+condBadgeHtml(r.condition)+'</td><td>'+r.language.toUpperCase()+'</td><td>'+r.wordCount+'</td><td>'+fmtClock(r.totalTimeSec*1000)+'</td><td>'+r.flagCount+'</td><td>'+(r.aiReliance==null?'—':r.aiReliance)+'</td><td>'+(r.when||'')+'</td><td><button class="ghost small" title="'+L.del+'" onclick="deleteRecord('+i+')">✕</button></td></tr>';}).join('');
-  const extra=Math.max(0,RECORDS.length-SEED_COUNT);
-  document.getElementById('recordsCount').textContent=RECORDS.length+' records';
-}
+function renderRecords(){const l=state&&state.lang?state.lang:LANG;const L=T[l];const tbl=document.getElementById('recTable');
+  tbl.innerHTML='<tr><th>'+L.colId+'</th><th>'+L.colCond+'</th><th>'+L.colLang+'</th><th>'+L.colWords+'</th><th>'+L.colTime+'</th><th>'+L.colFlags+'</th><th>'+L.colReliance+'</th><th>'+L.colDate+'</th><th></th><th></th></tr>'+
+   RECORDS.map((r,i)=>{const hot=(state&&state._record===r);return '<tr'+(hot?' style="outline:2px solid var(--accent);outline-offset:-2px"':'')+'><td>'+r.participantId+'</td><td>'+condBadgeHtml(r.condition)+'</td><td>'+r.language.toUpperCase()+'</td><td>'+r.wordCount+'</td><td>'+fmtClock(r.totalTimeSec*1000)+'</td><td>'+r.flagCount+'</td><td>'+(r.aiReliance==null?'—':r.aiReliance)+'</td><td>'+(r.when||'')+'</td><td><button class="ghost small" onclick="openLog('+i+')">Log</button></td><td><button class="ghost small" title="'+L.del+'" onclick="deleteRecord('+i+')">✕</button></td></tr>';}).join('');
+  document.getElementById('recordsCount').textContent=RECORDS.length+' records';}
 function openRecords(){show('recordsScreen');renderRecords();}
-function backHome(){show('setupScreen');}
+function backHome(){show(state&&state.mode==='student'?'roleScreen':'setupScreen');}
 function deleteRecord(i){RECORDS.splice(i,1);renderRecords();}
 function clearAllRecords(){if(confirm(T[state&&state.lang?state.lang:LANG].confirmClear)){RECORDS.length=0;renderRecords();}}
 
-/* ---------------- CSV ---------------- */
+/* ---- log detail ---- */
+function openLog(i){openLogFor(RECORDS[i]);}
+function openLogFor(rec){if(!rec)return;show('logScreen');const l=state&&state.lang?state.lang:LANG;const L=T[l];
+  document.getElementById('logTitle').textContent=L.logTitle+' · '+rec.participantId;
+  document.getElementById('logSub').innerHTML=condBadgeHtml(rec.condition)+' · '+rec.language.toUpperCase()+' · '+(rec.when||'');
+  const c=countEvents(rec);
+  const tiles=[[L.mLeaves,c.tab_leave],[L.mBlur,c.window_blur],[L.mFull,c.fullscreen_exit],[L.mPaste,c.paste_blocked],[L.mChat,c.chat_user_msg],[L.mTime,fmtClock(rec.totalTimeSec*1000)]];
+  document.getElementById('logStats').innerHTML=tiles.map(t=>'<div class="stat"><div class="big">'+t[1]+'</div><div class="note">'+t[0]+'</div></div>').join('');
+  const flags=['tab_leave','window_blur','fullscreen_exit','paste_blocked','copy_blocked'];
+  document.getElementById('logTimeline').innerHTML=(rec.events||[]).map(e=>{const f=flags.includes(e.type);return '<div><span class="k">'+fmtClock(e.sinceStartMs)+'</span> — <span'+(f?' class="evt-flag"':'')+'>'+e.type+'</span>'+(e.detail?' <span style="color:#6b7290">('+e.detail+')</span>':'')+'</div>';}).join('')||'<div>no events</div>';
+  document.getElementById('logEssay').textContent=rec.essay||'(empty)';
+  document.getElementById('logChat').textContent=(rec.chat&&rec.chat.length)?rec.chat.map(m=>m.role+': '+m.text).join('\n'):'(no AI conversation)';
+}
+
+/* ---- CSV ---- */
 function downloadCSV(){
-  const keys=["participantId","condition","language","wordCount","totalTimeSec","flagCount","aiReliance","chatTurns","when",
-    "demand","confidence","effort","timepressure","reliance","trust","easier","couldWithout","wantedHelp","independent","age","gender","ai_freq",
-    "essay","chat"];
+  const keys=["participantId","mode","condition","language","wordCount","totalTimeSec","flagCount","aiReliance","chatTurns","when",
+    "tabLeaves","windowBlur","fullscreenExit","pasteBlocked",
+    "demand","confidence","effort","timepressure","reliance","trust","easier","couldWithout","wantedHelp","independent","age","gender","ai_freq","essay","chat"];
   const esc=v=>{v=(v==null?'':String(v));return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;};
-  const cell=(r,k)=>{if(k==='chat')return esc(JSON.stringify(r.chat||[]));if(k in r)return esc(r[k]);if(r.survey&&k in r.survey)return esc(r.survey[k]);return '';};
+  const cell=(r,k)=>{const c=countEvents(r);if(k==='tabLeaves')return c.tab_leave;if(k==='windowBlur')return c.window_blur;if(k==='fullscreenExit')return c.fullscreen_exit;if(k==='pasteBlocked')return c.paste_blocked;if(k==='chat')return esc(JSON.stringify(r.chat||[]));if(k in r)return esc(r[k]);if(r.survey&&k in r.survey)return esc(r.survey[k]);return '';};
   const rows=[keys.join(",")].concat(RECORDS.map(r=>keys.map(k=>cell(r,k)).join(",")));
   const blob=new Blob([rows.join("\n")],{type:"text/csv"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="study_records.csv";a.click();
 }
+setLang('en');
 </script>
 </body>
 </html>
