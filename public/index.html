@@ -6,13 +6,13 @@
 <title>AI Dependency Study</title>
 <style>
   :root{
-    --bg:#0f1220; --panel:#171a2b; --panel2:#1e2236; --ink:#e8eaf2; --muted:#9aa0b8;
-    --line:#2b3050; --accent:#6c8cff; --accent2:#4cc9a0; --warn:#ff6b6b; --amber:#ffb454;
-    --radius:16px; --shadow:0 12px 34px rgba(0,0,0,.38);
+    --bg:#f4f8ff; --panel:#ffffff; --panel2:#eef3fb; --ink:#1e2942; --muted:#6b7793;
+    --line:#e3e9f4; --accent:#5b6ef5; --accent2:#14b28c; --warn:#ef5b6b; --amber:#c77d15;
+    --radius:16px; --shadow:0 10px 28px rgba(40,60,120,.10);
   }
   *{box-sizing:border-box}
   body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-       background:radial-gradient(1100px 560px at 72% -12%,#1b2140 0,var(--bg) 58%);color:var(--ink);line-height:1.55}
+       background:radial-gradient(1000px 520px at 78% -10%,#e5edff 0,#eaf6f1 45%,#f4f8ff 80%);color:var(--ink);line-height:1.55;min-height:100vh}
   .wrap{max-width:900px;margin:0 auto;padding:30px 22px 64px}
   h1{font-size:1.55rem;margin:0 0 6px;letter-spacing:-.01em}
   h2{font-size:1.2rem;margin:0 0 12px}
@@ -31,7 +31,7 @@
          border-radius:11px;padding:11px;width:100%;font-size:.95rem}
   textarea{resize:vertical}
   .badge{display:inline-block;padding:4px 11px;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.4px}
-  .b-control{background:#3a2b2b;color:#ffb4b4}.b-supportive{background:#2b3a34;color:#9ff0d4}.b-substitutive{background:#2b2f3a;color:#b4c4ff}
+  .b-control{background:#ffe1e6;color:#c23a56}.b-supportive{background:#d7f5ea;color:#0d8f68}.b-substitutive{background:#e2e8ff;color:#3f52cf}
   .hidden{display:none!important}
   .brandbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:24px}
   .logo{display:flex;align-items:center;gap:12px}
@@ -82,16 +82,16 @@
   .msg.sys{align-self:center;background:transparent;color:var(--amber);font-size:.8rem}
   .chatin{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}.chatin input{flex:1}
   #flagBanner{position:absolute;top:64px;left:0;right:0;background:var(--warn);color:#fff;text-align:center;padding:10px;font-weight:700;z-index:60}
-  #fsOverlay{position:fixed;inset:0;background:rgba(10,12,22,.97);z-index:80;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:30px}
-  .flagpill{background:#3a2b2b;color:#ffb4b4;padding:3px 10px;border-radius:999px;font-size:.75rem;font-weight:700}
+  #fsOverlay{position:fixed;inset:0;background:rgba(244,248,255,.97);z-index:80;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:30px}
+  .flagpill{background:#ffe1e6;color:#c23a56;padding:3px 10px;border-radius:999px;font-size:.75rem;font-weight:700}
   /* stats / tables */
   .grid3{display:flex;gap:14px;flex-wrap:wrap}
   .stat{flex:1;min-width:130px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:16px}
   .stat .big{font-size:1.5rem;font-weight:800}
-  .eventlog{max-height:260px;overflow:auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;background:#0b0e1a;border:1px solid var(--line);border-radius:10px;padding:12px;color:#9fb4d4}
-  .eventlog div{padding:3px 0;border-bottom:1px dashed #1c2338}.k{color:var(--amber)}
-  .evt-flag{color:#ff9a9a}
-  pre{white-space:pre-wrap;word-break:break-word;background:#0b0e1a;border:1px solid var(--line);border-radius:10px;padding:14px;font-size:.78rem;color:#9fb4d4;max-height:300px;overflow:auto}
+  .eventlog{max-height:260px;overflow:auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;background:#f4f7fc;border:1px solid var(--line);border-radius:10px;padding:12px;color:#46506b}
+  .eventlog div{padding:3px 0;border-bottom:1px dashed #e4e9f3}.k{color:var(--amber)}
+  .evt-flag{color:#d23f52;font-weight:700}
+  pre{white-space:pre-wrap;word-break:break-word;background:#f4f7fc;border:1px solid var(--line);border-radius:10px;padding:14px;font-size:.78rem;color:#46506b;max-height:300px;overflow:auto}
   table{width:100%;border-collapse:collapse;font-size:.85rem}
   th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
   th{color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.4px}
@@ -143,6 +143,17 @@
     <div class="card">
       <h1 data-i18n="welcomeTitle">Welcome, and thank you for taking part</h1>
       <p data-i18n="welcomeBody">You will write a short essay (100–200 words) within a time limit, then answer a brief questionnaire. Please stay on this page and in fullscreen during the task. Your responses are recorded anonymously for research purposes.</p>
+      <div class="row" style="margin:16px 0">
+        <div><label class="field" data-i18n="testCondLabel">Condition (testing)</label>
+          <select id="studentCond">
+            <option value="random" data-i18n="condRandom">Random (automatic)</option>
+            <option value="control" data-i18n="optControl">Control — no AI, locked focus</option>
+            <option value="supportive" data-i18n="optSupportive">Supportive — AI coach</option>
+            <option value="substitutive" data-i18n="optSubstitutive">Substitutive — AI unrestricted</option>
+          </select></div>
+        <div><label class="field" data-i18n="langLabel">Language</label>
+          <select id="studentLang" onchange="setLang(this.value)"><option value="en">English</option><option value="nl">Nederlands</option></select></div>
+      </div>
       <div class="consent">
         <input type="checkbox" id="consentBox" onchange="document.getElementById('beginBtn').disabled=!this.checked">
         <label for="consentBox" data-i18n="consentText">I have read the above and I agree to take part in this study.</label>
@@ -201,6 +212,7 @@
       <div style="font-size:2.4rem">✅</div>
       <h1 data-i18n="thanksTitle">Thank you for participating!</h1>
       <p data-i18n="thanksBody">Your responses have been recorded. You may now close this window. If you have questions about the study, please contact the researcher.</p>
+      <div style="margin-top:16px"><button onclick="goHome()" data-i18n="homeBtn">⌂ Back to home</button></div>
     </div>
   </div>
 
@@ -218,6 +230,7 @@
         <button onclick="openLogFor(state._record)" data-i18n="viewLogs">View behaviour log</button>
         <button class="ghost" onclick="openRecords()" data-i18n="viewRecords">Records & logs</button>
         <button class="ghost" onclick="restart()" data-i18n="restart">↺ New session</button>
+        <button class="ghost" onclick="goHome()" data-i18n="homeBtn">⌂ Home</button>
       </div>
     </div>
   </div>
@@ -304,6 +317,7 @@ const T={
   welcomeTitle:"Welcome, and thank you for taking part",
   welcomeBody:"You will write a short essay (100–200 words) within a time limit, then answer a brief questionnaire. Please stay on this page and in fullscreen during the task. Your responses are recorded anonymously for research purposes.",
   consentText:"I have read the above and I agree to take part in this study.",beginBtn:"Begin ▶",
+  testCondLabel:"Condition (testing)",condRandom:"Random (automatic)",homeBtn:"⌂ Back to home",
   ctrlTitle:"Researcher control panel",ctrlSub:"Preview any condition end-to-end and inspect the data it produces.",
   condLabel:"Condition",langLabel:"Language",durLabel:"Time limit (min)",
   optControl:"Control — no AI, locked focus",optSupportive:"Supportive — AI coach",optSubstitutive:"Substitutive — AI unrestricted",
@@ -334,6 +348,7 @@ const T={
   welcomeTitle:"Welkom, en bedankt voor je deelname",
   welcomeBody:"Je schrijft een kort essay (100–200 woorden) binnen een tijdslimiet en beantwoordt daarna een korte vragenlijst. Blijf tijdens de taak op deze pagina en in volledig scherm. Je antwoorden worden anoniem vastgelegd voor onderzoek.",
   consentText:"Ik heb het bovenstaande gelezen en ga akkoord met deelname aan deze studie.",beginBtn:"Beginnen ▶",
+  testCondLabel:"Conditie (test)",condRandom:"Willekeurig (automatisch)",homeBtn:"⌂ Terug naar start",
   ctrlTitle:"Onderzoeker-configuratiepaneel",ctrlSub:"Bekijk elke conditie van begin tot eind en inspecteer de data.",
   condLabel:"Conditie",langLabel:"Taal",durLabel:"Tijdslimiet (min)",
   optControl:"Controle — geen AI, vergrendelde focus",optSupportive:"Ondersteunend — AI-coach",optSubstitutive:"Vervangend — AI onbeperkt",
@@ -403,7 +418,8 @@ function logEvent(type,detail){const t=now();const e={type,detail:detail||'',sin
 function chooseRole(r){if(r==='student')show('studentWelcome');else show('setupScreen');}
 function balancedCondition(){const c={control:0,supportive:0,substitutive:0};RECORDS.forEach(r=>{if(c[r.condition]!=null)c[r.condition]++;});
   let best='control',min=Infinity;['control','supportive','substitutive'].forEach(k=>{if(c[k]<min){min=c[k];best=k;}});return best;}
-function beginStudent(){const cond=balancedCondition();beginSession(cond,LANG,10,'student');}
+function beginStudent(){const sel=(document.getElementById('studentCond')||{}).value||'random';const cond=(sel==='random')?balancedCondition():sel;const lang=(document.getElementById('studentLang')||{}).value||LANG;beginSession(cond,lang,10,'student');}
+function goHome(){const cb=document.getElementById('consentBox');if(cb){cb.checked=false;document.getElementById('beginBtn').disabled=true;}state={};show('roleScreen');}
 function startResearcher(){const cond=document.getElementById('cond').value,lang=document.getElementById('taskLang').value,minutes=parseInt(document.getElementById('minutes').value)||10;beginSession(cond,lang,minutes,'researcher');}
 function restart(){show(state.mode==='student'?'roleScreen':'setupScreen');}
 
