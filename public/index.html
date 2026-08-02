@@ -10,9 +10,22 @@
     --line:#e3e9f4; --accent:#5b6ef5; --accent2:#14b28c; --warn:#ef5b6b; --amber:#c77d15;
     --radius:16px; --shadow:0 10px 28px rgba(40,60,120,.10);
   }
+  body.dark{
+    --bg:#0f1220; --panel:#171a2b; --panel2:#1e2236; --ink:#e8eaf2; --muted:#9aa0b8;
+    --line:#2b3050; --accent:#6c8cff; --accent2:#4cc9a0; --warn:#ff6b6b; --amber:#ffb454;
+    --shadow:0 12px 34px rgba(0,0,0,.38);
+    background:radial-gradient(1100px 560px at 72% -12%,#1b2140 0,#0f1220 58%)!important;
+  }
   *{box-sizing:border-box}
   body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
        background:radial-gradient(1000px 520px at 78% -10%,#e5edff 0,#eaf6f1 45%,#f4f8ff 80%);color:var(--ink);line-height:1.55;min-height:100vh}
+  /* dark-mode overrides for the few hard-coded light values */
+  body.dark .b-control{background:#3a2b2b;color:#ffb4b4}body.dark .b-supportive{background:#2b3a34;color:#9ff0d4}body.dark .b-substitutive{background:#2b2f3a;color:#b4c4ff}
+  body.dark .eventlog,body.dark pre{background:#0b0e1a;color:#9fb4d4}
+  body.dark .eventlog div{border-bottom-color:#1c2338}
+  body.dark .evt-flag{color:#ff9a9a}
+  body.dark #fsOverlay{background:rgba(10,12,22,.97)}
+  body.dark .flagpill{background:#3a2b2b;color:#ffb4b4}
   .wrap{max-width:900px;margin:0 auto;padding:30px 22px 64px}
   h1{font-size:1.55rem;margin:0 0 6px;letter-spacing:-.01em}
   h2{font-size:1.2rem;margin:0 0 12px}
@@ -115,6 +128,7 @@
   <div class="brandbar">
     <div class="logo"><div class="dot"></div><div><b>AI Dependency Study</b><small>Leiden University · MSc Psychology</small></div></div>
     <div class="langtoggle">
+      <button class="ghost small" id="themeBtn" onclick="toggleTheme()" title="Theme">🌙</button>
       <button class="ghost small" onclick="setLang('en')">EN</button>
       <button class="ghost small" onclick="setLang('nl')">NL</button>
     </div>
@@ -309,6 +323,9 @@
 <script>
 const BACKEND_URL="";
 function apiBase(){if(BACKEND_URL)return BACKEND_URL.replace(/\/$/,"");if(location.protocol.indexOf("http")===0)return "";return null;}
+let THEME='light';
+function setTheme(t){THEME=t;document.body.classList.toggle('dark',t==='dark');const b=document.getElementById('themeBtn');if(b)b.textContent=t==='dark'?'☀️':'🌙';}
+function toggleTheme(){setTheme(THEME==='dark'?'light':'dark');}
 
 const T={
  en:{rolePick:"Who is opening this?",rolePickSub:"Choose how you want to enter the study.",
@@ -331,9 +348,9 @@ const T={
   viewLogs:"View behaviour log",restart:"↺ New session",
   recordsTitle:"Records & logs",recordsNote:"Click “Log” on any row to see that participant's full behaviour (tab leaves, focus loss, fullscreen exits, paste attempts) and event timeline.",
   csv:"⬇ CSV",clearAll:"🗑 Clear all",home:"Home",words:"words",del:"Delete",confirmClear:"Delete ALL records? This cannot be undone.",
-  coachNote:"Coach mode: the assistant only gives hints & feedback, never a full essay. Copy/paste is disabled.",
+  coachNote:"Coach mode: the assistant gives information, ideas and feedback, but won't write the whole essay for you. Copy/paste is disabled.",
   freeNote:"Unrestricted: the assistant may write anything; copy/paste allowed.",
-  botCoach:"(Coach mode) I can help you brainstorm and structure your ideas, but I won't write the essay for you. What's your main point so far?",
+  botCoach:"(Coach mode) Happy to help — I can give you facts, ideas and feedback. I just won't write the whole essay for you. What have you got so far?",
   botFree:"(Unrestricted) Sure — here's a full draft you could start from... [live study calls the AI model].",
   pasteBlocked:"Paste is disabled in this condition — recorded.",copyBlocked:"Copying from the assistant is disabled here.",
   scaleLo:"Strongly disagree",scaleHi:"Strongly agree",selPick:"Select…",
@@ -362,9 +379,9 @@ const T={
   viewLogs:"Gedrags-log bekijken",restart:"↺ Nieuwe sessie",
   recordsTitle:"Records & logs",recordsNote:"Klik op “Log” bij een rij om het volledige gedrag (tabwissels, focusverlies, volledig scherm verlaten, plakpogingen) en de tijdlijn te zien.",
   csv:"⬇ CSV",clearAll:"🗑 Alles wissen",home:"Start",words:"woorden",del:"Verwijder",confirmClear:"ALLE records verwijderen? Dit kan niet ongedaan worden.",
-  coachNote:"Coachmodus: de assistent geeft alleen hints & feedback, nooit een volledig essay. Kopiëren/plakken uit.",
+  coachNote:"Coachmodus: de assistent geeft informatie, ideeën en feedback, maar schrijft niet het hele essay voor je. Kopiëren/plakken uit.",
   freeNote:"Onbeperkt: de assistent mag alles schrijven; kopiëren/plakken toegestaan.",
-  botCoach:"(Coachmodus) Ik help je graag brainstormen en structureren, maar ik schrijf het essay niet voor je. Wat is je hoofdpunt?",
+  botCoach:"(Coachmodus) Ik help graag — ik kan feiten, ideeën en feedback geven. Ik schrijf alleen niet het hele essay voor je. Wat heb je tot nu toe?",
   botFree:"(Onbeperkt) Zeker — hier is een concept om mee te starten... [live studie roept het AI-model aan].",
   pasteBlocked:"Plakken is uitgeschakeld — vastgelegd.",copyBlocked:"Kopiëren van de assistent is hier uitgeschakeld.",
   scaleLo:"Helemaal oneens",scaleHi:"Helemaal eens",selPick:"Kies…",
